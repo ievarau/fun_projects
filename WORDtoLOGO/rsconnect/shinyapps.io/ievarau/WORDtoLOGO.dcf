@@ -1,0 +1,13 @@
+name: WORDtoLOGO
+title: WORDtoLOGO
+username:
+account: ievarau
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7392996
+bundleId: 6432403
+url: https://ievarau.shinyapps.io/WORDtoLOGO/
+when: 1666553232.29278
+lastSyncTime: 1666553232.29281
+asMultiple: FALSE
+asStatic: FALSE
