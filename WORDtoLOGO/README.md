@@ -1,46 +1,22 @@
-# README #
+# WORDtoLOGO #
 
-Last updated: 2022 October 24
-
-This repository contains all kinds of scripts for various things. Mostly the projects are random. I wrote them for fun or to learn things.
-
-### How to use this repo? ###
-
-Clone the git repo
-
-```
-git clone https://github.com/ievarau/random_projects.git
-
-cd random_projects
-```
-
-Repository has a folder per individual small project. Bellow you can find a list of such projects.
-
-### Available projects ###
-
-#### WORDtoLOGO
+<p align="center">
+  <img src="WORDtoLOGO.png">
+</p>
 
 This is a Shiny App that takes a word or multiple words (best to use a couple, so it looks nice) and generates a sequence logo-like figure with that word(s).
 
 **Try it out:** [https://ievarau.shinyapps.io/WORDtoLOGO/](https://ievarau.shinyapps.io/WORDtoLOGO/)
 
-Read more in the [README]() of the project.
+## How it works? ##
 
-<!-- #### Random partners ####
+In the script within the app, the input word(s) are read and converted to upper case character. A matrix of dimensions $(n+4)*m$, where $n$ is a lenght of the input word(s) and $m$ is a number of unique input characters, is created and filled with random small numbers. Then depending on the position of the specific character (letter), the small number is substituted with a random large number to emphasize them in the final logo.
 
-The script uses two comma-separated lists as input and generates random pairs. It first tries to include one element from each list, but if one list is longer than the other, remaining elements will be paired too. If the remaining elements is not an odd number, the random element from two lists will be selected for the second time.
+### Acknowledgments ###
 
-Read more in the [script's folder](https://bitbucket.org/ievara/utilities/src/master/random_partners/) README.
-
-#### NCMM Tuesday seminar feedback processor ####
-
-The repository contains a Shiny app to process the feedback given to the presenters of [Center for Molecular Medicine Norway](https://www.med.uio.no/ncmm/english/) (NCMM) Tuesday seminars. The feedback is given by people who attended the seminar by answering [this Google form](https://forms.gle/P1SZi2HnYjBKX1Lz6). The answers are extracted from the Google sheets table for each speaker. This table is then saved and submitted into the Shiny app.
-
-Read more in the [script's folder](https://bitbucket.org/ievara/utilities/src/master/biotuesday_feedback_processor/) README. -->
+I once created just my name as a logo in a quite manual way. The idea to create a Shiny app to convert any word in an automatic manner was given by [Jaime A Castro-Mondragón](https://jaimicore.github.io/).
 
 ### Contact info ###
-
-Repo was created by me - Ieva Rauluseviciute.
 
 :scroll: **Personal website:** [ievarau.github.io](https://ievarau.github.io/)
 
