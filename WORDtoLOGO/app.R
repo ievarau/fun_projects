@@ -11,26 +11,22 @@ library(ggseqlogo)
 ########
 
 ui <- fluidPage(
-  
-  ## Application title:
-  titlePanel("Plot a word as a sequence logo"),
-  
-  ## Sidebar:
+  titlePanel(title = "Plot a word as a sequence logo"),
   sidebarLayout(
-    sidebarPanel(
-      
-      ## Text input:
-      textInput("txt", "Write a word bellow: ", placeholder = "Hello", value = "Hello"),
-      
-      ## Downloading the plot: 
-      downloadButton("downloadPlot", "Download LOGO")
-      
+    sidebarPanel = sidebarPanel(
+      textInput(
+        inputId = "txt",
+        label = "Write a word bellow: ",
+        value = "Hello",
+        placeholder = "Hello"
+      ),
+      downloadButton(
+        outputId = "downloadPlot",
+        label = "Download LOGO"
+      )
     ),
-  
-  mainPanel(
-    plotOutput("plot")
-  ))
-  
+    mainPanel = mainPanel(plotOutput(outputId = "plot"))
+  )
 )
 
 ############
@@ -97,25 +93,13 @@ server <- function(input, output) {
     })
   
   output$downloadPlot <- downloadHandler(
-    filename = function(){paste(input$txt, ".png", sep = "")},
+    filename = function(){paste(input$txt, ".svg", sep = "")},
     content = function(file){
-      png(file = file)
+      svg(file = file)
       plot(wordLogo())
       dev.off()
-      # ggsave(file,
-      #        plot = output$plot)
     }
   )
-  # output$download <- downloadHandler(
-  #   filenanme = "word_logo.pdf",
-  #   content   = function(file) {
-  #     device <- function(..., width, height) {
-  #       grDevices::pdf(..., width = width, height = height)
-  #     }
-  #     ggsave(filename = file,
-  #            plot = output$plot,
-  #            device = device)
-  #   })
 
 }
 
